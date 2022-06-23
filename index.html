@@ -7,10 +7,13 @@
     <title>Firmas Corporativas</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.5.3/dist/clipboard.min.js"></script>
     <script src="main.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-    <link rel="icon" href="https://s3.amazonaws.com/mzprodassets/customer/alupar/alupar_logo_azul_RGB.PNG" type="image/png" sizes="32x32">
-</head> 
+    <link rel="icon" href="https://s3.amazonaws.com/mzprodassets/customer/alupar/alupar_logo_azul_RGB.PNG"
+        type="image/png" sizes="32x32">
+</head>
 
 <body>
     <div class="navbar">
@@ -49,10 +52,11 @@
                         <label for="ext" class="label">Extensión</label>
                         <span class="line"></span>
                     </div>
-                    <div class="form">
+                    <div class="form frmCorreo">
                         <input id="correo" type="text" class="input correo" placeholder=" ">
                         <label for="correo" class="label">Correo</label>
-                        <span class="line"></span>
+                        <span class="line lineCorreo lineGive"></span>
+                        <div class="btnPais"></div>
                     </div>
                 </div>
             </div>
@@ -60,17 +64,21 @@
             <div class="div2">
 
                 <div class="panelBotones">
-                    <a href="#" id="btnCopiar" class="copyAlp">Copiar</a>
-                    <a href="#" id="btnCopiarTce" class="copyTce">Copiar</a>
-                    <a href="#" id="btnCopiarRe" class="copyRe">Copiar</a>
+                    <a href="#" id="btnCopiar" class="copyAlp"></a>
+                    <a href="#" id="btnCopiarTce" class="copyTce"></a>
+                    <a href="#" id="btnCopiarRe" class="copyRe"></a>
+
+                    <a href="#" id="btnExport" class="exp exportAlp"></a>
+                    <a href="#" id="btnExportTce" class="exp exportTce"></a>
+                    <a href="#" id="btnExportRe" class="exp exportRe"></a>
                 </div>
 
 
                 <div class="firmaAlupar">
 
-                    <body bgcolor="#FFFFFF"  text="#10328F" leftmargin="0" topmargin="0" marginwidth="0"
+                    <body bgcolor="#FFFFFF" text="#10328F" leftmargin="0" topmargin="0" marginwidth="0"
                         marginheight="0">
-                        
+
                         <table id="copAlp" style="width:500px;height:214px" cellspacing="0" cellpadding="0" border="0"
                             bgcolor="#FFFFFF">
                             <tr>
@@ -121,9 +129,9 @@
                                                     <tr>
                                                         <td id="nombreF" bgcolor="#FFFFFF" valign="top"
                                                             style="width:320px;height:50px;font-size: 12px;text-transform: capitalize; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
-                                                            Nombre Colaborador</br><strong
-    text-transform: uppercase;
-                                                                style="font-size: 9px; color: #079541; text-transform: uppercase;">Rol -
+                                                            Nombre Colaborador</br><strong text-transform: uppercase;
+                                                                style="font-size: 9px; color: #079541; text-transform: uppercase;">Rol
+                                                                -
                                                                 Cargo</strong>
                                                         </td>
                                                     </tr>
@@ -132,10 +140,14 @@
                                                             <table style="width:320px;height:37px" cellspacing="0"
                                                                 cellpadding="0" border="0" bgcolor="#FFFFFF">
                                                                 <tr>
-                                                                    <td id="celExtF" bgcolor="#FFFFFF" align="left" valign="top"
-                                                                        style="width:150px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;"><p>Cel.: + 57 000 000 0000</p><p>Ext.: 0000</p> <br>
+                                                                    <td id="celExtF" bgcolor="#FFFFFF" align="left"
+                                                                        valign="top"
+                                                                        style="width:150px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
+                                                                        <p>Cel.: + 57 000 000 0000</p>
+                                                                        <p>Ext.: 0000</p> <br>
                                                                     </td>
-                                                                    <td id="correoF" bgcolor="#FFFFFF" align="left" valign="top"
+                                                                    <td id="correoF" bgcolor="#FFFFFF" align="left"
+                                                                        valign="top"
                                                                         style="width:170px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                         colaborador@alupar.com.co</br><a
                                                                             href="http://www.alupar.com.br">www.alupar.com.co</a></br>
@@ -232,12 +244,14 @@
                                                             <table style="width:320px;height:37px" cellspacing="0"
                                                                 cellpadding="0" border="0" bgcolor="#FFFFFF">
                                                                 <tr>
-                                                                    <td id="celExtFTCE" bgcolor="#FFFFFF" align="left" valign="top"
+                                                                    <td id="celExtFTCE" bgcolor="#FFFFFF" align="left"
+                                                                        valign="top"
                                                                         style="width:150px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                         <br>Cel.: +57 000 000 0000</br>Ext.: 0000<br>
                                                                         </br>
                                                                     </td>
-                                                                    <td id="correoFTCE" bgcolor="#FFFFFF" align="left" valign="top"
+                                                                    <td id="correoFTCE" bgcolor="#FFFFFF" align="left"
+                                                                        valign="top"
                                                                         style="width:170px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                         colaborador@tce.com.co</br><a
                                                                             href="http://www.alupar.com.br">www.alupar.com.co</a>
@@ -263,11 +277,11 @@
                                 </td>
                             </tr>
                         </table>
+                    </body>
 
                 </div>
 
                 <div class="firmaRE">
-
 
                     <body bgcolor="#FFFFFF" text="#10328F" leftmargin="0" topmargin="0" marginwidth="0"
                         marginheight="0">
@@ -280,99 +294,15 @@
                                         <tbody>
                                             <tr>
                                                 <th height="80" colspan="4" scope="row">
-                                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                        width="500px" height="50px" viewBox="0 0 500 50"
-                                                        enable-background="new 0 0 500 50" xml:space="preserve">
-                                                        <image id="image0" width="500" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAAyCAYAAACqECmXAAABHGlDQ1BpY2MAACiRY2BgMnB0cXJl
-                                                EmBgyM0rKQpyd1KIiIxSYD/PwMbAzAAGicnFBY4BAT4gdl5+XioDBvh2jYERRF/WBZmFKY8XcCUX
-                                                FJUA6T9AbJSSWpzMwMBoAGRnl5cUAMUZ5wDZIknZYPYGELsoJMgZyD4CZPOlQ9hXQOwkCPsJiF0E
-                                                9ASQ/QWkPh3MZuIAmwNhy4DYJakVIHsZnPMLKosy0zNKFAwtLS0VHFPyk1IVgiuLS1JzixU885Lz
-                                                iwryixJLUlOAaiHuAwNBiEJQiGkANVpokuhvggAUDxDW50Bw+DKKnUGIIUByaVEZlMnIZEyYjzBj
-                                                jgQDg/9SBgaWPwgxk14GhgU6DAz8UxFiaoYMDAL6DAz75gAAwMZP/aCJEEUAAAAgY0hSTQAAeiYA
-                                                AICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlz
-                                                AAAuIwAALiMBeKU/dgAADzhJREFUeNrtnWlwnVd9xn9Xi+XXsn0lW7Is25HteIkJDUtCCUtISUoo
-                                                w3KTUKYwULpdJjMt8AGGgc7wAdpPfIHOdAidQm9oh6VT0jDlBgIkQwJ20kxTYkJI4iVO7NiyLcWL
-                                                JMvyG6/iw/+cnHOvJNuylvde6fnNnDnnXe7Vu1y9z3uW/3Nybdf/E0IIIYSoW24FPtmQ9VEIIYQQ
-                                                4orZCHwPuEeCLoQQQtQnfwA8AnwJ+IkEXQghhKg/3gE8DHwZ+CZAU9ZHJIQQQojLpgH4DPA54M+B
-                                                B/0GCboQQghRH1wD/CuQA24E9scb1eQuhBBC1DaLga8AW4F7gVuoEnOQoAshhBC1SgvwKWAH0A28
-                                                DrgbuDDezmpyF0IIIWqLBPgr4O+Bp4D3AU9f6kMSdCGEEKI2WA18Evgb4FHgT4FfX+6H1eQuhBBC
-                                                ZEcj8F7gB1gtPAHeBnyISYg5QK7l7luyPhkhhBBiXpGUCtcBHwM+DrwE/Bvwg7RYPjmJ76hYVpO7
-                                                EEIIMQskpcK1wJ+5lAD/BbwrLZZ3TMf3NyWlwneBbcB/pMXyK1mfsBBCCDEXSEqFJuAm4P1AARu1
-                                                /kPgr4En0mJ5dDr/XhPwdeCLwD8kpcK3gG+kxfLhrC/EHGMh0Al0ASuADqANyLvcl/NAMxZzmLjP
-                                                LXbrYtpdPgycq9o2CJxyaQgYceVh4ASQunV+vxHgOHDM5cfdPkIIISZJUir0ALdFaR9QBj6SFsvb
-                                                Z/Jvv9qHnpQKm4BPAx8Ffg58PS2WH8/64tQBS4H1wDqgB1iFjVS8ypW7MXE+ChwBXnZp0KUhYMCV
-                                                T2ACPeDyYeAVxgrsWeAM0Fq13r8MLAYWuTzv/v4i7EXAl/Pu863Asigtx2Icvbj3u+M94lJfVD7o
-                                                tp/O+iYIIUQWJKVCF+ar/k7gXdhz9GFMRx9Ki+XeGfzbFctjBsUlpcISLP7tLsxergR8Jy2Wj2Z9
-                                                4TKkHdiM2e5dA2zCRHw9sAQb0LAXc+7pxYTukFvux8SvnohF3rcqdLq00uUrsBeWLuxFpA84HKWD
-                                                7locAg647eezPjEhhJgKSamwAXgrJuI3Y8/BbcCvgF8CT6bF8oUr/gOTO5aK5YuOck9KhRuAvwTu
-                                                ALYD/w78NC2W52qNbBk2Hd21wHUuf61bvxfYBTwH7AT2AC9igjUrN6+GWYEJ+ypM8H3LhG+xWIO9
-                                                BPRj4n7Q5ftc7l+E+rI+ESGE8CSlQhtwA/Bm4C2YkJ8HHsfixLcCv0mL5UwqK5MS9OhDzVic3MeB
-                                                twM/wWLmHkmL5bNZnMg00IHdqDh1YxZ7O6kU752oWXmqNGPX9yqXeoC1Ll/v8mZM4F/CxL46HUYv
-                                                T0KIGSApFVYCbwSuj/JuzKnt/zERfzwtlvdlfazRMVcsTzoOPSkVlgEfAe7EarEPAPdhfQVnsj7B
-                                                CVgG/CGV4r0SC+J/0qXtwO+w/mmRDe0EkV8XlX3ejtXmX8BaR6rTiaxPQAhR27iR51djrbFvJIh3
-                                                HqvEbccE/EngmVqutE5Z0Ku+rA3zmL0da4r4X+B+rFn+WIbn2YP1b9zk8k3YW9aTUXoWiXe9sRAT
-                                                +quBDS6P0ykmFvteVLsXYt6QlAoLsLFPr3HptVg36mZsoO+zwG8xbXgK2J1V0/kUzrFiedqc4pJS
-                                                oQWb0u1OrHl+H/Bj4IG0WP7dDJ5TDrtJ78C6A27GanKPA49hfRxPYA97MbdZyVih98vLsXEQL2Lj
-                                                H56P8n2MDf8TQtQBrtV4c5S2YJqwCRu3s8Ol54BnsFr3YNbHPU3nXrE8I9avSanQgDVx34EF1C8D
-                                                HnLpF2mxPNXBT1cDf4yFCNyC1bwedWkb9talB7SISQgCvxH7x9/o0kqsKX+PS7ui8kvotyREZiSl
-                                                Qg4bXLuB8ILuyxuxOUn2ROl5TMB3p8XyUNbHP8PXpmJ5Vrzck1JhNSa+twG3YmFcD2FD/B+9jLel
-                                                xZiAvwd4N/YA3gY86L7nGWBaHXfEvKIFe0hsxt7qNzJW7HdTWavf7darGV+IKeD6tFdjY2XWEjw9
-                                                /HIP1sJaLdp7gD3zOaQ6E0GvOoAcNpjO167fhj0Yt2IivS0tlvuxB2wB+IDb5zlMvB/E+uplUytm
-                                                gxbGirwX/g5M2L3Y78YiInZjpjxCzGuSUqERC2ldQwhl7XbL6zDBXoUZbO3Holz2urTPp7le075S
-                                                Mhf0cQ6oAbiOhgt/dH71kcKF7qNvOb+2r2m0NW3IDbf+Nnem6b7RJae+PZqc7s/0QIUYy2JM2L3A
-                                                b4mWz2HCvosg+r4pXyGQoq5xFbMVVBpMdbvyVYQQ1S7MBfMwJtiHCD4Ur/pRpMWyxjhdAbUm6Auw
-                                                ZvjbsZr4GeD+xt4V25sfuaEpd6b5TVhA/xpsZPqvsXCCJ9Ji+VCWBy7EJVhBcBf0Ir8Zi7nvw2r0
-                                                u6gU/AOo60hkhKtNd2ItT7ErpDeN6sSEeiX2+z6JCfXLmDi/jAm2d8k8DPRq0q+ZoxYEvRnrD/8w
-                                                JuS9wL1YuNtTExx0K8Gt50aXN7n9nwZ+48p7ZstyT4grpBFrdoythK9xy8sJTfe+Ru8FfzDrAxf1
-                                                RVIqLMZ+Ux1RWh6t6yJYOndg0UFHo1Q9h0MfQbT7JdTZk5WgN2H95R/GRr4fwkT8XqzP8UpOxLv6
-                                                vN7lb8DeHHdg4u5Ffqf6X0Sd0Epl+M1ronLK2Cb8nVgYXq0aOolpICkVlmKRQu1UTqTUPk55eZTO
-                                                EgQ5Fmo/SZRfPgYcSYtljfuoM2Zb0G8EPoYJ+RHMLvZeTHRn4uRaMfefNxBE/lrMQSyORdwF7JiG
-                                                8DkhZotVhJp8LPZrsKb65wkD8nyasVmexORw9tnjCXBcnmh7is3A6GdAHKjK4/XHcEKtGvTcZzYE
-                                                vQeb0OWj2Dzf/wl8B6sxZ3XS67ABS9cRTAc2Y6Y0XuQrHMb0tirqhAWEkfc++Wb8hLHN975JXza5
-                                                k8QN4G2fRIqFuZWxgjxRuWJdDVtqi4yZKUFvwULM7sIsYP8H+D42H2zNWuklpUIn9uDbQqVhwdWY
-                                                2L84QeqdwzPOibnDeNP+etEfZOwI/F1YuNCcM9JJSoUEm+p4KebZnXdlv26i9UsIAt3mrttAlI5X
-                                                LQ+Ms/24uv3ETDDdgr4F+AQ2C9te4B6sRj6c9YlOlaRUaGesV7hPa7B/1kNYs2Y87/dBl3rTYrnu
-                                                r4OYk+QIA/O8VaYvd2Oxv7HY+/76WQkddSFRbVitdhFBXBe51B6Vvegucvu3RWUv0kvdVw9jgjzk
-                                                yieifNDlJ6q2DRCJeFosKwpB1AzTIegLgA8Cf4uZ3X8f+BY2U9m8wD1wujB3o9VYvKWf93uNK/dg
-                                                rRMHCCNG/ahRPxilLyofTYvlOVczEnVHC5XN97HgNwK7Gc3tyZ1p2psbSXpzx/MHmp7eONAwsGSU
-                                                IL7NmLC2XGLdAkxw/bq8yxNMUE+5NBiVh7BwqZQgvH7bgMtTt9+Q2z6cFstp1hdWiOlmKoK+GmtS
-                                                vwurjf8LNshNTc8T4GajW43FbHYR4js7CKYMHdH6Vwe0YA+xOPmagq9NDAMj2MNtCHto6YVgnuAG
-                                                WS12i0sxsfXCuACrofrc7+vzJkxQfd7ovqMBE1Wf+5pyDmgbXXimYTR/Mj+aP3nuQtvwudH8ydEL
-                                                +ZHG0SWnmnOnm8/mRpKR3MjC4dxw62BueNHLDYNLjjccadvP2aYRggCfxX6/Z7Df7wjm+jjkyqfU
-                                                siXE5XElgn4j8FngT4D/Bu4mwwFucxU34CYW97YJUh57COexh7VvWlyKPSx97eScy09jtZaTbvuA
-                                                +5N++RX3mXOErhK/zjNM6FcdpTIm2j+YPSNcOozqxHRPU5iUCoswQbscJtrXC5nHC1pMm1vv8QLo
-                                                8ULp8UIKQTghiCsEIQarnS6s+qwX3vj7hzAf+fOEAW7+nvp7kGL30t9Pf6/Oun39Zy+474Pw+xjE
-                                                7vUJt98wcC4tlv32GB9bH0964/vre7CWKO/BvZvgxf0CCrkT4oq5XEFvxOLFP4v57f4z8E3CP7uo
-                                                QZJSYSEmCEsxIYibM704+NqcF7VYWNpd7mt2YOKSuHIsSJ5YsDxtVIrexRjvOy+XyfwevbhNRPVL
-                                                jBc9T/WLDARR9XhBHe9vxp+PX4JOEVq5/PfFAhvvO1KHI56bML/uTeOkNdjYEy/wz2ODTl9wSWFX
-                                                QlwEL+hpsdwA3FYt6C3AXwCfxx5GX8UGudXbQ0QIUfs0YxWGeJY7Py3mWmy8SSzwPr2IdUsJMd/Z
-                                                AHwIG5w+6psGE6xv/AvAs8CnsFnNNKJTCDFTnCXUzKtpxAabxuGkH4zKEMS9Wux7mYOhd0Jgradv
-                                                Bt6HhYp3AT8CisA2X0P/P6yf6x+xSVCEEKKW6SCI+4aq8gosdHRflOLpOA9Sw/4YQkS0YePYbgJu
-                                                Bq7HuqgeAn4GbE1KhVdfXr2g5wl9dkIIUc+0YE32611ahwn+Orecx8JJ9yPBF7VBDvvNvg6zLPep
-                                                C9gObAMeBR4j0upamG1NCCGypBUT97Uu76nKO7EWy/0E46j9OMMoV+6jckCkEJdDJ/Yb24D5O2wh
-                                                ODkOAs8QJhZ7CosKmfDl8pW/e7hiuQkhhJhfjGBjhZ6dYHsLwShqrStvAG4lmEl1YPN978dq+4ei
-                                                sneL7Kcy6kHMbRZgTouxwdg6QivReuwlcC8hhPMB4GuYM+OUW8kl6EIIUclp7KG7F2vqHI8WwkN7
-                                                rSvHot+NNZd6l8heTOC90Pe5/IjLNRlUbbKAMB3tCuy+dmL3dqUrd2O/gw7CvfZW4AeArYTunGMz
-                                                ebASdCGEmDynCSPrJxL9RoIIrMIEYBXWzHqL2+YFoYUg7v0E18hjLh2Jlv2EMKeyvgh1gPfZWErw
-                                                6Gi7SFpGMPhahvl1HKdyLvk+TLifwIS7HxPufjKOrpCgCyHEzHAea5Y/jA1suhgJQdw7sRphh8vX
-                                                RuXlhGlZc1ROHjNIsIeudogcdPkwwUTJO0DGBk2x86AnNj+6FLFR1XhUOyl6o6v4c36f2HTKWxl7
-                                                N8eE4P/fShDrxa68xKUGgq2wd9H018uXhzBhHiS8MPkXqboyU5OgCyFE9qRYH/z+SXwmoXJqV5/H
-                                                M9L52ea8o6O3FvZukNV2x9XLl1ofU+2UeKntsd10bBntRTR2SfQvH+fd9l53zU4QxNqX47kB5pUp
-                                                mgRdCCHqk9SlQ1kfiKgNGqb+FUIIIYTImtzoqNxdhRBCiHrn94q24MUqCUkRAAAAJXRFWHRkYXRl
-                                                OmNyZWF0ZQAyMDIyLTA1LTA1VDAwOjIyOjQzKzAzOjAwnZEtqwAAACV0RVh0ZGF0ZTptb2RpZnkA
-                                                MjAyMi0wNS0wNVQwMDoyMjo0MyswMzowMOzMlRcAAAA3dEVYdGljYzpjb3B5cmlnaHQAQ29weXJp
-                                                Z2h0IDE5OTkgQWRvYmUgU3lzdGVtcyBJbmNvcnBvcmF0ZWQxbP9tAAAAIHRFWHRpY2M6ZGVzY3Jp
-                                                cHRpb24AQWRvYmUgUkdCICgxOTk4KbC66vYAAAAASUVORK5CYII=" />
-                                                    </svg>
-                                                    <!-- <img
-                                                        src="../linhasgeradoras-novo.png" width="500" height="50" alt="" /> -->
+                                                    <img src="img/linhasgeradoras-novo.png" width="500" height="50"
+                                                        alt="" />
+
                                                 </th>
                                             </tr>
                                             <tr>
                                                 <td style="width:35px" bgcolor="#FFFFFF">
                                                 </td>
-                                                <td style="width:145px" bgcolor="#FFFFFF" valign="top" align="left"><img
+                                                <td id="imgChange" style="width:145px" bgcolor="#FFFFFF" valign="top" align="left"><img
                                                         src="https://risaraldaenergia.com.co/wp-content/themes/moqueca/images/logo-risaralda.png"
                                                         width="120" height="60" alt="" />
                                                 </td>
@@ -383,7 +313,8 @@
                                                             <td id="nombreFRE" bgcolor="#FFFFFF" valign="top"
                                                                 style="width:320px;height:50px;text-transform: capitalize; font-size: 12px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                 Nombre Colaborador</br><strong
-                                                                    style="text-transform: uppercase; font-size: 9px; color: #079541;">Rol -
+                                                                    style="text-transform: uppercase; font-size: 9px; color: #079541;">Rol
+                                                                    -
                                                                     Cargo</strong>
                                                             </td>
                                                         </tr>
@@ -392,11 +323,13 @@
                                                                 <table style="width:320px;height:37px" cellspacing="0"
                                                                     cellpadding="0" border="0" bgcolor="#FFFFFF">
                                                                     <tr>
-                                                                        <td id="celExtFRE" bgcolor="#FFFFFF" align="left" valign="top"
+                                                                        <td id="celExtFRE" bgcolor="#FFFFFF"
+                                                                            align="left" valign="top"
                                                                             style="width:150px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                             Cel.: + 57 000 000 0000 <br>Ext.: 0000</br>
                                                                         </td>
-                                                                        <td id="correoFRE" bgcolor="#FFFFFF" align="left" valign="top"
+                                                                        <td id="correoFRE" bgcolor="#FFFFFF"
+                                                                            align="left" valign="top"
                                                                             style="width:170px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
                                                                             colaborador@risaraldaenergia.com.co</br><a
                                                                                 href="http://www.alupar.com.br">www.alupar.com.co</a></br>
@@ -452,5 +385,7 @@
 
         </div>
     </div>
+        <footer class="footer"><marquee class="marquee" behavior="" direction="">💻          Diego Figueroa          💻</marquee>
+    </footer>
 
 </body>

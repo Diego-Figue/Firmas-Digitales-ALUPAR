@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://risaraldaenergia.com.co/wp-content/themes/moqueca/images/logo-risaralda.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <title>Firma</title>
+</head>
+
+<body>
+
+    <style>
+        .file {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="file">
+
+        <body bgcolor="#FFFFFF" text="#10328F" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+            <table id="copRe" style="width:500px;height:214px" cellspacing="0" cellpadding="0" border="0"
+                bgcolor="#FFFFFF">
+                <tr>
+                    <td>
+                        <table style="width:500px;height:164px" cellspacing="0" cellpadding="0" border="0"
+                            bgcolor="#FFFFFF">
+                            <tbody>
+                                <tr>
+                                    <th height="80" colspan="4" scope="row">
+
+                                        <img src="img/linhasgeradoras-novo.png" width="500" height="50" alt="" />
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="width:35px" bgcolor="#FFFFFF">
+                                    </td>
+                                    <td id="imgChange" style=" width:145px" bgcolor="#FFFFFF" valign="top" align="left">
+                                        <img src="https://risaraldaenergia.com.co/wp-content/themes/moqueca/images/logo-risaralda.png"
+                                            width="120" height="60" alt="" />
+                                    </td>
+                                    <td style="width:320px" bgcolor="#FFFFFF">
+                                        <table style="width:320px;height:164px" cellspacing="0" cellpadding="0"
+                                            border="0" bgcolor="#FFFFFF">
+                                            <tr>
+                                                <td id="nombreFRE" bgcolor="#FFFFFF" valign="top"
+                                                    style="width:320px;height:50px;text-transform: capitalize; font-size: 12px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
+                                                    Nombre Colaborador</br><strong
+                                                        style="text-transform: uppercase; font-size: 9px; color: #079541;">Rol
+                                                        -
+                                                        Cargo</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:320px;height:40px" bgcolor="#FFFFFF">
+                                                    <table style="width:320px;height:37px" cellspacing="0"
+                                                        cellpadding="0" border="0" bgcolor="#FFFFFF">
+                                                        <tr>
+                                                            <td id="celExtFRE" bgcolor="#FFFFFF" align="left"
+                                                                valign="top"
+                                                                style="width:150px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
+                                                                Cel.: + 57 000 000 0000 <br>Ext.: 0000</br>
+                                                            </td>
+                                                            <td id="correoFRE" bgcolor="#FFFFFF" align="left"
+                                                                valign="top"
+                                                                style="width:170px;height:40px;font-size: 9px; color: #003694; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
+                                                                colaborador@risaraldaenergia.com.co</br><a
+                                                                    href="http://www.alupar.com.br">www.alupar.com.co</a></br>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td bgcolor="#FFFFFF" valign="botton"
+                                                    style="width:320px;height:74px;font-size: 8px; color: #BFBFBF; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif;">
+                                                    Este mensaje se destina &uacute;nicamente a la persona
+                                                    que fue enviado y puede contener informaci&oacute;n
+                                                    confidencial, legalmente protegida. Si el lector no es
+                                                    el destinatario, no se debe leer, distribuir, utilizar,
+                                                    o copiar este mensaje.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </body>
+
+    </div>
+    <script>
+        //Creamos la instancia
+        let params = new URLSearchParams(document.location.search);
+        let nombre = params.get("nombre");
+        let celular = params.get("celular");
+        let correo = params.get("correo");
+        let extension = params.get("extension");
+        let rol = params.get("rol");
+        let COL2 = params.get("COL2");
+        let PER2 = params.get("PER2");
+
+        $("#nombreF").html(
+            nombre + "</br><strong style='font-size: 9px; color: #079541;text-transform: uppercase;'>" + rol + "</strong>"
+        );
+
+        $("#celExtF").html(
+            "<p>Cel.: + 57 " + celular + "</p><p>Ext.: " + extension + "</p> <br>"
+        );
+
+        $("#correoF").html(
+            correo + "@alupar.com.co</br><a href='http://www.alupar.com.br'>www.alupar.com.co</a></br>"
+        );
+
+        $("#nombreFTCE").html(
+            nombre + "</br><strong style='font-size: 9px; color: #009fe3;text-transform: uppercase;'>" + rol + "</strong>"
+        );
+
+        $("#celExtFTCE").html(
+            "<p>Cel.: + 57 " + celular + "</p><p>Ext.: " + extension + "</p> <br>"
+        );
+
+        $("#correoFTCE").html(
+            correo + "@tce.com.co</br><a href='http://www.alupar.com.br'>www.alupar.com.co</a></br>"
+        );
+
+        $("#nombreFRE").html(
+            nombre + "</br><strong style='text-transform: uppercase; font-size: 9px; color: #079541;'>" + rol + "</strong>"
+        );
+
+        $("#celExtFRE").html(
+            "<p>Cel.: + 57 " + celular + "</p><p>Ext.: " + extension + "</br>"
+        );
+
+        $("#correoFRE").html(
+            correo + "@risaraldaenergia.com.co</br><a href='http://www.alupar.com.br'>www.alupar.com.co</a></br>"
+        );
+        if (COL2 == "true") {
+            $("#imgChange").html(
+                "<img src='https://risaraldaenergia.com.co/wp-content/themes/moqueca/images/logo-risaralda.png' width='120' height='60' alt='' />"
+            );
+            $("#celExtFRE").html(
+                "<p>Cel.: + 57 " + celular + "</p><p>Ext.: " + extension + "</p> <br>"
+            );
+            $("#correoFRE").html(
+                correo + "@alupar.com.co</br><a href='http://www.alupar.com.br'>www.alupar.com.co</a></br>"
+            );
+        } else {
+            $("#imgChange").html(
+                "<img src='https://risaraldaenergia.com.co/wp-content/themes/moqueca/images/logo-risaralda.png' width='120' height='60' alt='' />"
+            );
+            $("#celExtFRE").html(
+                "<p>Cel.: + 57 " + celular + "</p><p>Ext.: " + extension + "</p> <br>"
+            );
+            $("#correoFRE").html(
+                correo + "@alupar.com.co</br><a href='http://www.alupar.com.br'>www.alupar.com.co</a></br>"
+            );
+        }
+        if (PER2 == "true") {
+
+            $("#imgChange").html(
+                "<img src='https://lavirgen.com.pe/wp-content/themes/moqueca/images/logo-lavirgen.png' width='120' height='60' alt='' />"
+            );
+            $("#celExtFRE").html(
+                "<p>Cel.: + 51 " + celular + "</p><p>Ext.: " + extension + "</p> <br>"
+            );
+            $("#correoFRE").html(
+                correo + "@lavirgen.com.pe</br><a href='http://www.lavirgen.com.pe'>www.lavirgen.com.pe</a></br>"
+            );
+        }
+
+
+    </script>
+</body>
+
+</html>

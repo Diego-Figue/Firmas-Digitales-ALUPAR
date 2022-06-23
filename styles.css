@@ -156,6 +156,26 @@ input:not(:placeholder-shown)~.line {
     transform-origin: left;
 }
 
+.input:focus~.lineCorreo,
+input:not(:placeholder-shown)~.lineCorreo {
+    transform: translateY(-25px);
+    transform: scale(1);
+    font-size: 15px;
+    transform-origin: right;
+    transition: all .2s ease-in-out;
+}
+
+.lineCorreo {
+    position: absolute;
+    display: block;
+    top: 1.8rem;
+    width: 78%;
+    height: 2px;
+    background: #134791;
+    transform: scale(0);
+    transform-origin: left;
+}
+
 .div2 {
     grid-area: 1 / 4 / 4 / 7;
     display: flex;
@@ -242,69 +262,263 @@ nav ul li span:nth-child(4) {
     --n: 4;
 }
 
-.copyAlp{
+.copyAlp {
     display: block;
     text-decoration: none;
-    width: 60px;
-    height: 50px;
-    border: 4px solid #0f3e80;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #0f3e80;
     border-radius: 5px;
     font-weight: 700;
     line-height: 50px;
     color: #0f3e80;
+    background-image: url(img/copy.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .2s ease-in-out;
     text-align: center;
+
 }
-.copyAlp:hover{
+
+.copyAlp:hover {
     background: #0f3e80;
     color: #fff;
     box-shadow: 0px 0px .2rem #0f3e80;
+    background-image: url(img/copy2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .3s ease-in-out;
 }
 
-.copyTce{
+.copyTce {
     display: block;
     text-decoration: none;
-    width: 60px;
-    height: 50px;
-    border: 4px solid #08a5e9;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #08a5e9;
     border-radius: 5px;
     font-weight: 700;
     line-height: 50px;
     color: #08a5e9;
+    background-image: url(img/copyTce.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .2s ease-in-out;
     text-align: center;
 }
-.copyTce:hover{
+
+.copyTce:hover {
     background: #08a5e9;
     color: #fff;
     box-shadow: 0px 0px .2rem #08a5e9;
+    background-image: url(img/copy2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .3s ease-in-out;
 }
-.copyRe{
+
+.copyRe {
     display: block;
     text-decoration: none;
-    width: 60px;
-    height: 50px;
-    border: 4px solid #109206;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #109206;
     border-radius: 5px;
     font-weight: 700;
     line-height: 50px;
     color: #109206;
+    background-image: url(img/copyRe.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .2s ease-in-out;
     text-align: center;
 }
-.copyRe:hover{
+
+.copyRe:hover {
     background: #109206;
     color: #fff;
     box-shadow: 0px 0px .2rem #109206;
+    background-image: url(img/copy2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
     transition: all .3s ease-in-out;
 }
-.panelBotones{
+
+.panelBotones {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 
+.panelBotones {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 
+.exp {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: .5rem;
+}
 
+.exportAlp {
+    border: 2px solid #0f3e80;
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 50px;
+    background-image: url(img/exportAlp.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+.exportAlp:hover {
+    background: #0f3e80;
+    color: #fff;
+    box-shadow: 0px 0px .2rem #0f3e80;
+    background-image: url(img/export2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+
+.exportTce {
+    border: 2px solid #08a5e9;
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 50px;
+    background-image: url(img/exportTce.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+.exportTce:hover {
+    background: #08a5e9;
+    color: #fff;
+    box-shadow: 0px 0px .2rem #08a5e9;
+    background-image: url(img/export2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+
+.exportRe {
+    border: 2px solid #109206;
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 50px;
+    background-image: url(img/exportRe.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+.exportRe:hover {
+    background: #109206;
+    color: #fff;
+    box-shadow: 0px 0px .2rem #109206;
+    background-image: url(img/export2.png);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 25px;
+    background: #0f3e80;
+}
+
+.marquee {
+    color: #fff;
+}
+
+.frmCorreo {
+    display: flex;
+    width: 100%;
+}
+
+.btnCol,
+.btnPer {
+    /* position: relative;
+    top: -30px;
+    right: -79%; */
+    border: 2px solid #0f3e80;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #0f3e80;
+    font-size: 15px;
+    padding: .5rem;
+    margin: 5px;
+    font-weight: 700;
+}
+
+.btnPer:hover,
+.btnCol:hover {
+    background: #0f3e80;
+    color: #fff;
+}
+
+.btnCol2,
+.btnPer2 {
+    /* position: relative;
+    top: -30px;
+    right: -79%; */
+    border: 2px solid #0e9604;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color: #0e9604;
+    font-size: 15px;
+    padding: .5rem;
+    margin: 5px;
+    font-weight: 700;
+}
+
+.btnPer2:hover,
+.btnCol2:hover {
+    background: #0e9604;
+    color: #fff;
+}
+
+.on {
+    background: #0f3e80;
+    color: #fff;
+}
+.on2 {
+    background: #0e9604;
+    color: #fff;
+}
